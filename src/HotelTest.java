@@ -14,6 +14,23 @@ public class HotelTest {
         String filename = scanner.nextLine();
         File file = new File("");
 
+        if(args.length < 2){
+            System.out.println("Arguments not exist");
+            System.exit(0);
+        }
+
+        String saleString = args[0];
+        String dinnerString = args[1];
+        String conferenceString = args[2];
+
+        File saleFile = new File(saleString);
+        File dinnerFile = new File(dinnerString);
+        File conferenceFile = new File(conferenceString);
+
+        /*if(!saleFile.exists()){
+            System.out.println("File not Exist");
+        }*/
+
         //Convert to usable code goal
         /*if(args.length < 2){
             System.out.println("Arguments not exist");
