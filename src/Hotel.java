@@ -1,3 +1,10 @@
+/**
+ * Alex Chheng and Chloe Culver
+ * 10/20/2019
+ * Input: It is not require
+ * Output: It print the result to the txt files
+ */
+
 import java.util.ArrayList;
 import java.util.Date;
 import java.text.SimpleDateFormat;

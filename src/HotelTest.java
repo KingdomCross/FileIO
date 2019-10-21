@@ -1,3 +1,10 @@
+/**
+ * Alex Chheng and Chloe Culver
+ * 10/20/2019
+ * Input: It is require for the purchase of the hotel service
+ * Output: It print the result to the txt files
+ */
+
 import java.io.*;
 import java.util.*;
 
