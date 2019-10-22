@@ -16,7 +16,6 @@ public class HotelTest {
 		}
 		else {
 			String input= "";
-			File data = new File("sales.txt");
 		try {
 
 			System.out.println("Writing contents onto new File... ");
@@ -47,17 +46,19 @@ public class HotelTest {
 				String line = e.nextLine();
 				if(line.contains(str1)) 
 				{
-
-					Conference.println(e.nextLine());
+					Conference.println(LastLine);
+					Conference.println(line);
 
 				}
 				if(line.contains(str2)) 
 				{
 					Dinner.println(LastLine);
-					//Dinner.println(e.nextLine());
+					Dinner.println(line);
 				}
 				LastLine = line;
 			}
+			Conference.close();
+			Dinner.close();
 			e.close();
 			in.close();
 			out.close();
