@@ -1,3 +1,5 @@
-sales.txt
-Dinner.txt
-Conference.txt
+Dinner
+Conference
+Lodging
+Hotel
+Dinner
