@@ -1,2 +1,3 @@
 John;Public;Dinner;29.95;6/7/2014
 Abby;Lawrence;Dinner;23.45;10/10/2014
+Alex;Public;Dinner;68.79;8/12/2014
