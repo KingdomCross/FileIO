@@ -10,7 +10,13 @@ import java.util.*;
 
 public class HotelTest {
     public static void main(String[] args) throws FileNotFoundException{
+    	/**
+    	 * Code for Part 1
+    	 */
     	
+    	/**
+    	 * Checks if enough arguments have been passed in
+    	 */
 		if(args.length == 0) {
 			System.out.println("Invalid input");
 		}
@@ -19,52 +25,80 @@ public class HotelTest {
 		try {
 
 			System.out.println("Writing contents onto new File... ");
-			
-			PrintWriter out = new PrintWriter("sales.txt");
+			/**
+			 * Takes contents of arguments and adds them into one string
+			 */
+			PrintWriter sales = new PrintWriter("sales.txt");
 			for(String s :args) {
 				input+= s + "\n";	
 			}
+			/**
+			 * puts string contents in a scanner class object to be written into the sales.txt file
+			 */
 			Scanner in = new Scanner(input);
 			Scanner e = new Scanner(input);
+			/**
+			 * writes scanner info onto new file called sales.txt
+			 */
 			while(in.hasNext()) 
 			{
-				out.println(in.nextLine());
+				sales.println(in.nextLine());
 			}
 			
 			
 			/**
 			 * 	Code for Part II
 			 */
-			
+			/**
+			 * Instantiate objects for part 2
+			 */
 			String str1 = "Conference";
 			String str2 = "Dinner";
+			/**
+			 * Creates writable files Conference and Data
+			 */
 			PrintWriter Conference = new PrintWriter("Conference.txt");
 			PrintWriter Dinner = new PrintWriter("Dinner.txt");
-
 			String LastLine = null;
 			while(e.hasNext()) {
 				String line = e.nextLine();
+				/**
+				 * Checks each line if it contains the word Conference,
+				 * if it does. then that line and the line before it it written down in the Conference.txt file
+				 */
 				if(line.contains(str1)) 
 				{
 					Conference.println(LastLine);
 					Conference.println(line);
 
 				}
+				/**
+				 * Checks each line if it contains the word Dinner,
+				 * if it does. then that line and the line before it it written down in the Dinner.txt file
+				 */
 				if(line.contains(str2)) 
 				{
 					Dinner.println(LastLine);
 					Dinner.println(line);
 				}
+				/**
+				 * gets the previous line iterated
+				 */
 				LastLine = line;
 			}
+			/**
+			 * Closes all the previous files open
+			 */
 			Conference.close();
 			Dinner.close();
 			e.close();
 			in.close();
-			out.close();
+			sales.close();
 			System.out.println("File Created Successfully.");
 			}
-
+		/**
+		 * Exception handler if no file can be written to
+		 */
 		catch (FileNotFoundException Exception)
 		{
 			System.out.println("File not Found");
