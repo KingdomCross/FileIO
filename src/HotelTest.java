@@ -49,16 +49,19 @@ public class HotelTest {
 			/**
 			 * 	Code for Part II
 			 */
+			
 			/**
 			 * Instantiate objects for part 2
 			 */
 			String str1 = "Conference";
 			String str2 = "Dinner";
+			String str3 = "Lodging";
 			/**
 			 * Creates writable files Conference and Data
 			 */
 			PrintWriter Conference = new PrintWriter("Conference.txt");
 			PrintWriter Dinner = new PrintWriter("Dinner.txt");
+			PrintWriter Lodging = new PrintWriter("Lodging.txt");
 			String LastLine = null;
 			while(e.hasNext()) {
 				String line = e.nextLine();
@@ -70,7 +73,6 @@ public class HotelTest {
 				{
 					Conference.println(LastLine);
 					Conference.println(line);
-
 				}
 				/**
 				 * Checks each line if it contains the word Dinner,
@@ -82,6 +84,15 @@ public class HotelTest {
 					Dinner.println(line);
 				}
 				/**
+				 * Checks each line if it contains the word Lodging,
+				 * if it does. then that line and the line before it it written down in the Lodging.txt file
+				 */
+				if(line.contains(str3))
+				{
+					Lodging.println(LastLine);
+					Lodging.println(line);
+				}
+				/**
 				 * gets the previous line iterated
 				 */
 				LastLine = line;
@@ -89,12 +100,13 @@ public class HotelTest {
 			/**
 			 * Closes all the previous files open
 			 */
+			Lodging.close();
 			Conference.close();
 			Dinner.close();
 			e.close();
 			in.close();
 			sales.close();
-			System.out.println("File Created Successfully.");
+			System.out.println("Files Orgnaized Successfully.");
 			}
 		/**
 		 * Exception handler if no file can be written to
@@ -104,8 +116,7 @@ public class HotelTest {
 			System.out.println("File not Found");
 			
 		}
-		
-	
+
 		 
 	}
 

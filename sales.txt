@@ -4,3 +4,5 @@ Jane
 Public;Conference;499.00;8/9/2014
 Abby
 Lawrence;Dinner;23.45;10/10/2014
+Alex
+Public;Lodging;67.98;8/12/2014
