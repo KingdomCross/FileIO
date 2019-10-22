@@ -10,27 +10,55 @@ import java.util.*;
 
 public class HotelTest {
     public static void main(String[] args) throws FileNotFoundException{
-     
+    	
 		if(args.length == 0) {
 			System.out.println("Invalid input");
 		}
 		else {
-		try {
 			String input= "";
 			File data = new File("sales.txt");
-			System.out.println("Writing contents onto new File ");
+		try {
+
+			System.out.println("Writing contents onto new File... ");
 			
-			PrintWriter out = new PrintWriter("C:\\Users\\Chloe Culver\\eclipse-workspace\\Stream IO\\sales.txt");
+			PrintWriter out = new PrintWriter("sales.txt");
 			for(String s :args) {
-				input+= s +"\n ";
-				
+				input+= s + "\n";	
 			}
 			Scanner in = new Scanner(input);
+			Scanner e = new Scanner(input);
 			while(in.hasNext()) 
 			{
 				out.println(in.nextLine());
 			}
 			
+			
+			/**
+			 * 	Code for Part II
+			 */
+			
+			String str1 = "Conference";
+			String str2 = "Dinner";
+			PrintWriter Conference = new PrintWriter("Conference.txt");
+			PrintWriter Dinner = new PrintWriter("Dinner.txt");
+
+			String LastLine = null;
+			while(e.hasNext()) {
+				String line = e.nextLine();
+				if(line.contains(str1)) 
+				{
+
+					Conference.println(e.nextLine());
+
+				}
+				if(line.contains(str2)) 
+				{
+					Dinner.println(LastLine);
+					//Dinner.println(e.nextLine());
+				}
+				LastLine = line;
+			}
+			e.close();
 			in.close();
 			out.close();
 			System.out.println("File Created Successfully.");
@@ -41,9 +69,10 @@ public class HotelTest {
 			System.out.println("File not Found");
 			
 		}
+		
+	
 		 
 	}
-
 
 }
     }
