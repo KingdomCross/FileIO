@@ -1,2 +1,1 @@
-Alex
-Public;Lodging;67.98;8/12/2014
+Alex;Public;Lodging;23.45;10/10/2014
